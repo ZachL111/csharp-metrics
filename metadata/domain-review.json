@@ -1,0 +1,73 @@
+{
+  "repo": "csharp-metrics",
+  "language": "C#",
+  "category": "Observability",
+  "goal": "Expose counters, gauges, histograms, and text-format fixtures.",
+  "review_model": {
+    "terms": [
+      "span volume",
+      "latency skew",
+      "signal loss",
+      "incident shape"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "span volume",
+      "signal": 66,
+      "slack": 24,
+      "drag": 22,
+      "confidence": 83,
+      "score": 173,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "latency skew",
+      "signal": 61,
+      "slack": 29,
+      "drag": 9,
+      "confidence": 67,
+      "score": 191,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "signal loss",
+      "signal": 53,
+      "slack": 40,
+      "drag": 13,
+      "confidence": 75,
+      "score": 182,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "incident shape",
+      "signal": 55,
+      "slack": 43,
+      "drag": 26,
+      "confidence": 90,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "span volume",
+      "signal": 83,
+      "slack": 21,
+      "drag": 31,
+      "confidence": 81,
+      "score": 175,
+      "lane": "ship"
+    }
+  ]
+}

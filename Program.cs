@@ -3,6 +3,7 @@ using CsharpMetrics;
 if (args.Contains("--test"))
 {
     PolicyTests.Run();
+    DomainReviewTests.Run();
     return;
 }
 
